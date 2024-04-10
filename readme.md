@@ -19,11 +19,9 @@ The 32-bit subset of the x86 instruction set is a fairly clean
 assembly language.  It's difficult to tell this from the various Intel
 and Microsoft documentation, because the x86 is backwards compatible
 with 20-year old processors and operating systems, and _all_ of that
-is described.  This note is an attempt to highlight what we need for
-the CSE413 compiler project.  It describes the x86 instruction set
+is described. The note describes the x86 instruction set
 that we will need and basic information about the Microsoft Assembler
-(MASM) that is installed in the MSCC lab, which we will use to
-assemble the generated code.
+(MASM), which we will use to assemble the generated code.
 
 
 **MASM Assembly Language Code**
