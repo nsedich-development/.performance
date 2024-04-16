@@ -1,9 +1,9 @@
 emscripten-installation
 ============
 
-[Release Link]https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable-64bit.zip
-[Download and install]https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
-[Tutorial]https://kripken.github.io/emscripten-site/docs/getting_started/Tutorial.html#tutorial
+[Release Link](https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable-64bit.zip)
+[Download and install](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html)
+[Tutorial](https://kripken.github.io/emscripten-site/docs/getting_started/Tutorial.html#tutorial)
 
 ~~~
 # Fetch the latest registry of available tools.
@@ -30,10 +30,10 @@ source ./emsdk_env.sh
 
 **Useful Links**
 
-[Getting started with WASM]https://tutorialzine.com/2017/06/getting-started-with-web-assembly
+[Getting started with WASM](https://tutorialzine.com/2017/06/getting-started-with-web-assembly)
 
-[OpenGL WASM]https://stackoverflow.com/questions/45121115/webassembly-opengl-single-context-many-output-to-canvas
+[OpenGL WASM](https://stackoverflow.com/questions/45121115/webassembly-opengl-single-context-many-output-to-canvas)
 
-[WASM arrays]https://github.com/DanRuta/wasm-arrays
+[WASM arrays](https://github.com/DanRuta/wasm-arrays)
 
-[Web Workers]https://github.com/ChrisZieba/holdem
+[Web Workers](https://github.com/ChrisZieba/holdem)
