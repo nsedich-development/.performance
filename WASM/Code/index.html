@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebAssembly Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">	
+	<script src="wasm-arrays.min.js"></script>
+    <script src="index.js"></script>	
+  </head>
+  <body>
+	
+	<button class="iterator">Iteration Test - Non Web Worker</button>
+	<button class="iterator_ww">Iteration Test - Web Worker</button>
+	<button class="iterator_ww_stop">Iteration Test - Web Worker Stop</button>
+	<button class="array_sum">Array - Sum</button>
+    <div class="dice dice-6"></div>
+    <span>Click Dice To Roll</span>    
+    <script>
+		
+	  var iterator = document.querySelector('.iterator');
+	  var iterator_ww = document.querySelector('.iterator_ww');
+	  var iterator_ww_stop = document.querySelector('.iterator_ww_stop');
+	  var array_sum = document.querySelector('.array_sum');
+	  var dice = document.querySelector('.dice');
+	  var w;
+	  
+      dice.addEventListener('click', function(){
+        
+        var result = _roll_dice();
+        dice.className = "dice dice-" + result;                   
+
+      });
+	  
+	   iterator.addEventListener('click', function(){        
+        var result = _iteration_test();
+        alert(result);
+       });
+	   
+	   iterator_ww.addEventListener('click', function(){       
+			startWorker();
+       });
+	   
+	  iterator_ww_stop.addEventListener('click', function(){   
+			stopWorker();
+       });
+	   
+	   array_sum.addEventListener('click', function(){ 
+			const result = ccallArrays("addNums", "number", ["array"], [[1,2,3,4,5,6,7]])
+			alert(result);			
+       });
+	  
+	  function startWorker() {
+			if(typeof(Worker) !== "undefined") {
+				if(typeof(w) == "undefined") {
+					w = new Worker("webworker.js");
+				}
+				w.onmessage = function(event) {
+					alert(event.data);
+					w.terminate();
+					w = undefined;
+				};
+			} else {
+				alert("Sorry! No Web Worker support.");
+			}
+		}
+
+		function stopWorker() {
+			w.terminate();
+			w = undefined;
+		}
+	  
+    </script>
+   
+  </body>
+</html> 
